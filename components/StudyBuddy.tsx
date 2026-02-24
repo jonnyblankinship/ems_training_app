@@ -83,8 +83,8 @@ export function StudyBuddy() {
       <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
         {messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-center pb-8">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-              <BookOpen className="w-8 h-8 text-blue-600" />
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+              <BookOpen className="w-8 h-8 text-red-600" />
             </div>
             <h2 className="text-xl font-bold text-slate-800 mb-2">EMS Study Buddy</h2>
             <p className="text-slate-500 text-sm max-w-xs mb-6">
@@ -95,7 +95,7 @@ export function StudyBuddy() {
                 <button
                   key={prompt}
                   onClick={() => sendMessage(prompt)}
-                  className="w-full text-left text-sm bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-700 hover:bg-blue-50 hover:border-blue-200 transition-colors active:scale-95"
+                  className="w-full text-left text-sm bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-700 hover:bg-red-50 hover:border-red-200 transition-colors active:scale-95"
                 >
                   {prompt}
                 </button>
@@ -111,7 +111,7 @@ export function StudyBuddy() {
           >
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                msg.role === 'user' ? 'bg-blue-600' : 'bg-slate-200'
+                msg.role === 'user' ? 'bg-red-600' : 'bg-slate-200'
               }`}
             >
               {msg.role === 'user' ? (
@@ -123,7 +123,7 @@ export function StudyBuddy() {
             <div
               className={`max-w-[85%] rounded-2xl px-4 py-3 ${
                 msg.role === 'user'
-                  ? 'bg-blue-600 text-white rounded-tr-sm'
+                  ? 'bg-red-600 text-white rounded-tr-sm'
                   : 'bg-white border border-slate-100 text-slate-800 rounded-tl-sm shadow-sm'
               }`}
             >
@@ -142,7 +142,7 @@ export function StudyBuddy() {
               <Bot className="w-4 h-4 text-slate-600" />
             </div>
             <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
-              <Loader2 className="w-4 h-4 text-blue-500 animate-spin" />
+              <Loader2 className="w-4 h-4 text-red-500 animate-spin" />
             </div>
           </div>
         )}
@@ -160,13 +160,13 @@ export function StudyBuddy() {
             onKeyDown={handleKeyDown}
             placeholder="Ask about medications, protocols, assessments..."
             rows={1}
-            className="flex-1 resize-none bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent max-h-32 overflow-y-auto"
+            className="flex-1 resize-none bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent max-h-32 overflow-y-auto"
             style={{ minHeight: '48px' }}
           />
           <button
             onClick={() => sendMessage()}
             disabled={!input.trim() || isLoading}
-            className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-blue-700 active:scale-95 transition-all flex-shrink-0"
+            className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-red-700 active:scale-95 transition-all flex-shrink-0"
           >
             <Send className="w-5 h-5 text-white" />
           </button>

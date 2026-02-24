@@ -228,8 +228,8 @@ export function PatientEncounter() {
         {/* Processing state */}
         {isProcessing && (
           <div className="flex flex-col items-center gap-3 py-4">
-            <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center">
-              <Loader2 className="w-10 h-10 text-blue-600 animate-spin" />
+            <div className="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center">
+              <Loader2 className="w-10 h-10 text-red-600 animate-spin" />
             </div>
             <p className="text-sm text-slate-500">Analyzing encounter...</p>
           </div>
@@ -264,7 +264,7 @@ export function PatientEncounter() {
             {!isRecording && transcript && (
               <button
                 onClick={() => analyzeEncounter(transcript)}
-                className="w-full bg-blue-600 text-white rounded-2xl py-3 text-sm font-semibold hover:bg-blue-700 active:scale-95 transition-all"
+                className="w-full bg-red-600 text-white rounded-2xl py-3 text-sm font-semibold hover:bg-red-700 active:scale-95 transition-all"
               >
                 Re-analyze Transcript
               </button>
@@ -296,12 +296,12 @@ export function PatientEncounter() {
                   onChange={(e) => setManualInput(e.target.value)}
                   placeholder={`Describe the encounter. For example:\n\n"Dispatch: 45 y/o male, chest pain. On arrival patient is pale and diaphoretic. He reports crushing chest pain 8/10 radiating to his left arm, started 20 min ago. No relief with rest. History of hypertension. Takes lisinopril. Last meal 2 hours ago. BP 148/92, HR 102, RR 18, SpO2 96%."`}
                   rows={6}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                 />
                 <button
                   onClick={handleManualSubmit}
                   disabled={!manualInput.trim()}
-                  className="w-full bg-blue-600 text-white rounded-2xl py-3 text-sm font-semibold disabled:opacity-40 hover:bg-blue-700 active:scale-95 transition-all"
+                  className="w-full bg-red-600 text-white rounded-2xl py-3 text-sm font-semibold disabled:opacity-40 hover:bg-red-700 active:scale-95 transition-all"
                 >
                   Analyze Encounter
                 </button>
@@ -312,19 +312,19 @@ export function PatientEncounter() {
 
         {/* Analysis Results */}
         {analysis && (
-          <div className="bg-white border border-blue-100 rounded-2xl shadow-sm overflow-hidden">
+          <div className="bg-white border border-red-100 rounded-2xl shadow-sm overflow-hidden">
             <button
               onClick={() => setSoapExpanded((v) => !v)}
-              className="w-full flex items-center justify-between px-4 py-3 bg-blue-50 border-b border-blue-100"
+              className="w-full flex items-center justify-between px-4 py-3 bg-red-50 border-b border-red-100"
             >
               <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5 text-blue-600" />
-                <span className="font-semibold text-blue-900 text-sm">Encounter Analysis & SOAP Report</span>
+                <FileText className="w-5 h-5 text-red-600" />
+                <span className="font-semibold text-red-900 text-sm">Encounter Analysis & SOAP Report</span>
               </div>
               {soapExpanded ? (
-                <ChevronUp className="w-4 h-4 text-blue-600" />
+                <ChevronUp className="w-4 h-4 text-red-600" />
               ) : (
-                <ChevronDown className="w-4 h-4 text-blue-600" />
+                <ChevronDown className="w-4 h-4 text-red-600" />
               )}
             </button>
             {soapExpanded && (

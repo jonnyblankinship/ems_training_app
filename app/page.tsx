@@ -15,7 +15,7 @@ export default function Home() {
       {/* Header */}
       <header className="bg-white border-b border-slate-100 px-4">
         <div className="flex items-center gap-3 py-4">
-          <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+          <div className="w-9 h-9 bg-red-600 rounded-xl flex items-center justify-center flex-shrink-0">
             <span className="text-white font-bold text-sm">EMS</span>
           </div>
           <div>
@@ -30,7 +30,7 @@ export default function Home() {
             onClick={() => setActiveTab('study')}
             className={`flex items-center gap-2 py-3 px-4 text-sm font-medium border-b-2 transition-colors ${
               activeTab === 'study'
-                ? 'border-blue-600 text-blue-600'
+                ? 'border-red-600 text-red-600'
                 : 'border-transparent text-slate-500 hover:text-slate-700'
             }`}
           >
@@ -41,7 +41,7 @@ export default function Home() {
             onClick={() => setActiveTab('encounter')}
             className={`flex items-center gap-2 py-3 px-4 text-sm font-medium border-b-2 transition-colors ${
               activeTab === 'encounter'
-                ? 'border-blue-600 text-blue-600'
+                ? 'border-red-600 text-red-600'
                 : 'border-transparent text-slate-500 hover:text-slate-700'
             }`}
           >

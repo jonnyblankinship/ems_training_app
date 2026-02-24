@@ -50,7 +50,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
     // H3
     if (line.startsWith('### ')) {
       elements.push(
-        <h3 key={i} className="text-base font-bold text-blue-800 mt-4 mb-1 first:mt-0">
+        <h3 key={i} className="text-base font-bold text-red-800 mt-4 mb-1 first:mt-0">
           {line.slice(4)}
         </h3>
       );
@@ -58,7 +58,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
     // H2
     else if (line.startsWith('## ')) {
       elements.push(
-        <h2 key={i} className="text-lg font-bold text-blue-900 mt-5 mb-2 first:mt-0">
+        <h2 key={i} className="text-lg font-bold text-red-900 mt-5 mb-2 first:mt-0">
           {line.slice(3)}
         </h2>
       );
@@ -66,7 +66,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
     // H1
     else if (line.startsWith('# ')) {
       elements.push(
-        <h1 key={i} className="text-xl font-bold text-blue-900 mt-4 mb-2 first:mt-0">
+        <h1 key={i} className="text-xl font-bold text-red-900 mt-4 mb-2 first:mt-0">
           {line.slice(2)}
         </h1>
       );
@@ -82,7 +82,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
         const indent = match[1].length;
         elements.push(
           <li key={i} className={`flex gap-2 ${indent > 0 ? 'ml-4' : ''} text-sm leading-relaxed`}>
-            <span className="text-blue-400 mt-0.5 flex-shrink-0">•</span>
+            <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
             <span>{renderInline(match[2])}</span>
           </li>
         );
@@ -94,7 +94,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
       if (match) {
         elements.push(
           <li key={i} className="flex gap-2 text-sm leading-relaxed">
-            <span className="text-blue-600 font-semibold flex-shrink-0 min-w-[1.2rem]">{match[1]}.</span>
+            <span className="text-red-600 font-semibold flex-shrink-0 min-w-[1.2rem]">{match[1]}.</span>
             <span>{renderInline(match[2])}</span>
           </li>
         );
